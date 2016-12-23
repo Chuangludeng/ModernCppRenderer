@@ -30,3 +30,16 @@
 
 # Debug files
 *.dSYM/
+
+*.pdb
+*.tlog
+*.ilk
+*.log
+*.sdf
+mini3d/images/donation.png
+mini3d/images/mini_0.png
+mini3d/images/mini_1.png
+mini3d/images/mini_2.png
+mini3d/images/mini_3.png
+mini3d/images/mini_4.png
+*.idb
