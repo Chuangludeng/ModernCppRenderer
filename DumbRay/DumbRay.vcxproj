@@ -150,6 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DumbRay.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="tga_device.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitfield.h" />

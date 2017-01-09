@@ -43,6 +43,3 @@ mini3d/images/mini_2.png
 mini3d/images/mini_3.png
 mini3d/images/mini_4.png
 *.idb
-DumbRay.sdf
-mini3d/Mini3D.opensdf
-.vs/DumbRay/v14/.suo

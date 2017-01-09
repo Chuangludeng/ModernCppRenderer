@@ -13,12 +13,12 @@ class TGA_Device : public RenderDevice<Pixel>
 {
 public:
 
-    TGA_Device((Viewport viewport) : RenderDevice<Pixel>(Viewport)
+    TGA_Device(Viewport viewport) : RenderDevice<Pixel>(viewport)
     {}
 
-    virtual void set_pixel(int x, int y, PixelType p) = 0;
+    void set_pixel(int x, int y, PixelType p) override;
 
-    virtual PixelType get_pixel(int x, int y) = 0;
+    PixelType get_pixel(int x, int y) override;
 
-    virtual void present() = 0; //you can simply write content to file
+    void present() override; //you can simply write content to file
 };

@@ -18,8 +18,9 @@ int main()
 
     //setup renderer
     Renderer<Pixel_RGBAU> tga_renderer;
-    tga_renderer.clear(Pixel_RGBAU({128, 110, 55, 255}));
-    Pixel_RGBAU Red({ 255, 0, 0, 255 });
+	Pixel_RGBAU clearColor(128,110,55,255);
+    tga_renderer.clear(clearColor);
+    Pixel_RGBAU Red(255, 0, 0, 255);
 
     for (size_t i = 0; i < unicorn.indices.size();)
     {
