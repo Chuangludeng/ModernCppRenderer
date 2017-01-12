@@ -25,9 +25,9 @@ int main()
     for (size_t i = 0; i < unicorn.indices.size();)
     {
         //face
-        vec3i v1 = unicorn.vertices[i++];
-        vec3i v2 = unicorn.vertices[i++];
-        vec3i v3 = unicorn.vertices[i++];
+		vector_t v1 = unicorn.vertices[i++];
+		vector_t v2 = unicorn.vertices[i++];
+		vector_t v3 = unicorn.vertices[i++];
         tga_renderer.draw_triangle(v1, v2, v3, Red);//color should be more "colorful"
     }
 

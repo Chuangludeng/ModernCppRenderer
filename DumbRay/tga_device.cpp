@@ -1,6 +1,12 @@
 #include "tga_device.h"
 
 template<typename Pixel>
+TGA_Device<Pixel>::TGA_Device(Viewport viewport) : RenderDevice<Pixel>(viewport)
+{
+	framebuffer = new Pixel[viewport.w][viewport.h];
+}
+
+template<typename Pixel>
 void TGA_Device<Pixel>::set_pixel(int x, int y, PixelType p)
 {
 

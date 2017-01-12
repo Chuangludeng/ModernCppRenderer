@@ -4,7 +4,7 @@
 
 struct Model {
     std::vector<uint16_t> indices;
-    std::vector<vec3i> vertices;
+    std::vector<vector_t> vertices;
 };
 
 

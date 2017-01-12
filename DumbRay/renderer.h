@@ -13,9 +13,9 @@ You should make good use of search engines, it's not that hard.
 template<typename Pixel> //old school renderer, coupled with Pixel format.
 class Renderer {
 public:
-    void draw_triangle(vec3i t0, vec3i t1, vec3i t2, Pixel color);
+    void draw_triangle(vector_t &t0, vector_t &t1, vector_t &t2, Pixel color);
     
-    void draw_line(vec3i from, vec3i to, Pixel color);
+    void draw_line(vector_t &from, vector_t &to, Pixel color);
 
     void clear(Pixel clear_color);
 

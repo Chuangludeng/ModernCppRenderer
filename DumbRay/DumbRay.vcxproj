@@ -151,11 +151,13 @@
   <ItemGroup>
     <ClCompile Include="DumbRay.cpp" />
     <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="tga_device.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitfield.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="math.hpp" />
     <ClInclude Include="model.h" />
     <ClInclude Include="pixel.h" />
     <ClInclude Include="renderer.h" />
