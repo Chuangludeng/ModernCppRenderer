@@ -1,14 +1,16 @@
 #pragma once
 #include "pixel.h"
+
+struct Viewport {
+	uint32_t x;
+	uint32_t y;
+	uint32_t w;
+	uint32_t h;
+};
+
 template<typename Pixel>
 class RenderDevice {
 public:
-    struct Viewport {
-        float x;
-        float y;
-        float w;
-        float h;
-    };
 
     using PixelType = Pixel;
 

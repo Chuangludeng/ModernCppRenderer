@@ -24,6 +24,23 @@ public:
     void clear(Pixel clear_color);
 
     void present();
+
+	void transform_update();
+
+	vector_t transform_apply(const vector_t& x);
+
+	int transform_check_cvv(const vector_t& v);
+
+	vector_t transform_homogenize(const vector_t& x);
+
+	void setCamera(vector_t& eye, vector_t& at, vector_t& up );
+
+	matrix_t world;         // 世界坐标变换
 private:
     RenderDevice<Pixel> *device; // TODO: you know how to make it exception safe.
+	Viewport viewport;
+
+	matrix_t view;          // 摄影机坐标变换
+	matrix_t projection;    // 投影变换
+	matrix_t transformMatrix;     // transform = world * view * projection
 };

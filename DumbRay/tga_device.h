@@ -26,5 +26,6 @@ public:
 
 private:
 	FIBITMAP* bitmap;
-	int bytespp;
+	int pitch;
+	BYTE* pixels;
 };

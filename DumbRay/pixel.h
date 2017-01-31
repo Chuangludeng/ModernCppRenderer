@@ -21,5 +21,5 @@ union Pixel_RGBAU
 	unsigned int  color;
 	struct { unsigned char R; unsigned char G; unsigned char B; unsigned char A; };
 	Pixel_RGBAU(unsigned int  c) : color(c) {}
-	Pixel_RGBAU(int a, int r, int g, int b) : A(a), R(r), G(g), B(b) {}
+	Pixel_RGBAU(int r, int g, int b, int a) : A(a), R(r), G(g), B(b) {}
 };

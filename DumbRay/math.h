@@ -29,6 +29,11 @@ public :
 		return (float)sqrt(sq);
 	}
 
+	bool operator==(const vector_t & _v)
+	{
+		return x == _v.x && y == _v.y && z == _v.z && w == _v.w;
+	}
+
 	vector_t operator+(const vector_t & _v)
 	{
 		return vector_t(x + _v.x, y + _v.y, z + _v.z);

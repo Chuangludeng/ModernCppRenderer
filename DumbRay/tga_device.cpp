@@ -21,7 +21,8 @@ TGA_Device<Pixel>::TGA_Device(Viewport viewport) : RenderDevice<Pixel>(viewport)
 	FreeImage_Initialise();
 	FreeImage_SetOutputMessage(FreeImageErrorHandler);
 	bitmap = FreeImage_Allocate(viewport_.w, viewport_.h, 32, FI_RGBA_RED_MASK, FI_RGBA_GREEN_MASK, FI_RGBA_BLUE_MASK);
-	bytespp = FreeImage_GetLine(bitmap) / FreeImage_GetWidth(bitmap);
+	pitch = FreeImage_GetPitch(bitmap);
+	pixels = FreeImage_GetBits(bitmap);
 }
 
 template<typename Pixel>
@@ -34,20 +35,19 @@ TGA_Device<Pixel>::~TGA_Device()
 template<typename Pixel>
 void TGA_Device<Pixel>::set_pixel(int x, int y, PixelType p)
 {
-	BYTE* bits = FreeImage_GetScanLine(bitmap, y);
-	bits += x * bytespp;
-	bits[FI_RGBA_RED] = p.R;
-	bits[FI_RGBA_GREEN] = p.G;
-	bits[FI_RGBA_BLUE] = p.B;
-	bits[FI_RGBA_ALPHA] = p.A;
+	BYTE* pixel = pixels + y*pitch + x*4;
+
+	pixel[FI_RGBA_RED] = p.R;
+	pixel[FI_RGBA_GREEN] = p.G;
+	pixel[FI_RGBA_BLUE] = p.B;
+	pixel[FI_RGBA_ALPHA] = p.A;
 }
 
 template<typename Pixel>
 Pixel TGA_Device<Pixel>::get_pixel(int x, int y)
 {
-	BYTE* bits = FreeImage_GetScanLine(bitmap, y);
-	bits += x * bytespp;
-	return Pixel(bits[FI_RGBA_RED], bits[FI_RGBA_GREEN], bits[FI_RGBA_BLUE], bits[FI_RGBA_ALPHA]);
+	BYTE* pixel = pixels + y*pitch + x * 4;
+	return Pixel(pixel[FI_RGBA_RED], pixel[FI_RGBA_GREEN], pixel[FI_RGBA_BLUE], pixel[FI_RGBA_ALPHA]);
 }
 
 template<typename Pixel>
