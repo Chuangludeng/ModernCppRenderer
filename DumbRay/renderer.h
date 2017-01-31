@@ -13,6 +13,10 @@ You should make good use of search engines, it's not that hard.
 template<typename Pixel> //old school renderer, coupled with Pixel format.
 class Renderer {
 public:
+
+	Renderer();
+	~Renderer();
+
     void draw_triangle(vector_t &t0, vector_t &t1, vector_t &t2, Pixel color);
     
     void draw_line(vector_t &from, vector_t &to, Pixel color);
@@ -21,5 +25,5 @@ public:
 
     void present();
 private:
-    RenderDevice<Pixel> *device_; // TODO: you know how to make it exception safe.
+    RenderDevice<Pixel> *device; // TODO: you know how to make it exception safe.
 };

@@ -1,6 +1,8 @@
 #pragma once
 #include "render_device.h"
 
+#include "FreeImage.h"
+
 //TODO: implement TGA_Device
 //
 // example usage:
@@ -20,9 +22,9 @@ public:
 
     PixelType get_pixel(int x, int y) override;
 
-    void present() override; //you can simply write content to file
+    void flush() override; //you can simply write content to file
 
 private:
-
-	Pixel** framebuffer;
+	FIBITMAP* bitmap;
+	int bytespp;
 };
