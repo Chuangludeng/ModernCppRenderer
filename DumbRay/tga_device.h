@@ -14,6 +14,7 @@ class TGA_Device : public RenderDevice<Pixel>
 public:
 
 	TGA_Device(Viewport viewport);
+	~TGA_Device();
 
     void set_pixel(int x, int y, PixelType p) override;
 
