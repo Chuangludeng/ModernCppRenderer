@@ -121,12 +121,15 @@ void Renderer<Pixel>::draw_line(vector_t &from, vector_t &to, Pixel color)
 	}
 	else if (from.x == to.x) {
 		int inc = (from.y <= to.y) ? 1 : -1;
-		for (y = from.y; y != to.y; y += inc) device->set_pixel(from.x, y,color);
+		for (y = from.y; y != (int)to.y; y += inc)
+		{
+				device->set_pixel(from.x, y, color);
+		}
 		device->set_pixel(to.x, to.y,color);
 	}
 	else if (from.y == to.y) {
 		int inc = (from.x <= to.x) ? 1 : -1;
-		for (x = from.x; x != to.x; x += inc) device->set_pixel(x, from.y,color);
+		for (x = from.x; x != (int)to.x; x += inc) device->set_pixel(x, from.y,color);
 		device->set_pixel(to.x, to.y,color);
 	}
 	else {

@@ -61,18 +61,20 @@ int main()
 
 	float alpha = 8.78f;
 
-	draw_box(alpha, tga_renderer, Red);
+	//draw_box(alpha, tga_renderer, Red);
 
 
-	//draw_box(1);
-  //  for (size_t i = 0; i < unicorn.indices.size();)
-  //  {
-  //      //face
-		//vector_t v1 = unicorn.vertices[i++];
-		//vector_t v2 = unicorn.vertices[i++];
-		//vector_t v3 = unicorn.vertices[i++];
-  //      tga_renderer.draw_triangle(v1, v2, v3, Red);//color should be more "colorful"
-  //  }
+	for (size_t i = 0; i < unicorn.indices.size();)
+	{
+		//face
+		int index1 = unicorn.indices[i++] - 1;
+		int index2 = unicorn.indices[i++] - 1;
+		int index3 = unicorn.indices[i++] - 1;
+		vector_t v1 = unicorn.vertices[index1];
+		vector_t v2 = unicorn.vertices[index2];
+		vector_t v3 = unicorn.vertices[index3];
+		tga_renderer.draw_triangle(v1, v2, v3, Red);
+	}
 
     tga_renderer.present();
     return 0;

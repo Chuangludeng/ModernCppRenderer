@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS // for using FILE
 #include "math.h"
 #include <vector>
 
@@ -17,5 +18,4 @@ you can use modern c++'s move semantics to make it more efficient.
 class ModelLoader {
 public:
     void load(std::string file, Model &model);//signature may changed to make use of modern c++ syntax
-    //TODO: implement the rest...
 };
